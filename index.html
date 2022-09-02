@@ -16,35 +16,48 @@
   </head>
   <body class="bg-slate-100">
     <!-- start  -->
-    <!-- navbar start -->
-    <div class="navbar md:w-9/12 md:mx-auto py-10">
-      <div class="flex-1 font-bold">
-        <a
-          class="btn btn-ghost bg-blue-800 normal-case text-slate-100 text-xl mx-5"
-          >Bangladesh</a
-        >News
-      </div>
-      <div class="flex-none gap-2">
-        <div class="flex-none">
-          <ul class="menu menu-horizontal p-0">
-            <li class="underline">
-              <a class="text-blue-800 font-bold">News</a>
-            </li>
+    <header>
+      <!-- navbar start -->
+      <div class="navbar flex-wrap text-center md:w-9/12 md:mx-auto py-10">
+        <div class="flex md:flex-1 justify-center w-full mx-auto font-bold">
+          <a
+            class="btn btn-ghost bg-blue-800 normal-case text-slate-100 text-xl mx-5"
+            >Bangladesh</a
+          >News
+        </div>
+        <div class="flex-none mx-auto md:pt-0 pt-10">
+          <div class="flex-none">
+            <ul class="menu menu-horizontal p-0">
+              <li class="underline">
+                <a class="text-blue-800 font-bold">News</a>
+              </li>
 
-            <li><a class="text-blue-300">Blog</a></li>
-          </ul>
-        </div>
-        <div class="dropdown dropdown-end">
-          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-            <div class="w-10 rounded-full">
-              <img src="https://placeimg.com/80/80/people" />
-            </div>
-          </label>
+              <li><a class="text-blue-300">Blog</a></li>
+            </ul>
+          </div>
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img src="https://placeimg.com/80/80/people" />
+              </div>
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-    <hr class="w-10/12 mx-auto py-5" / >
+      <hr class="w-10/12 mx-auto py-5" / >
+    </header>
     <!-- navbar end  -->
+    <main>
+      <section class="pb-10">
+        <!-- menu adder style  -->
+        <div class="text-center">
+          <ul
+            id="All-Menu"
+            class="menu menu-horizontal flex-wrap text-gray-500 rounded gap-5 text-base font-medium"
+          ></ul>
+        </div>
+      </section>
+    </main>
 
     <script src="apps.js
     "></script>
