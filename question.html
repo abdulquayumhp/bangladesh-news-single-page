@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- uaisy ui   -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-neutral-300 h-screen">
+    <main class="flex justify-center content-center pt-20">
+      <section>
+        <!-- accordion  -->
+        <div class="collapse w-3/4 mx-auto mb-10">
+          <input type="checkbox" class="peer" />
+          <div
+            class="collapse-title bg-neutral-50 text-blue-900 font-semibold text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content rounded-t-2xl"
+          >
+            1. What is Difference between var, let and const in JavaScript ?
+          </div>
+          <div
+            class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            <p class="py-5">
+              1.var: The var keyword declares a function-scoped or global
+              variable. Function-scoped means that the variable is only
+              available within the function it was declared in. Global variables
+              are available throughout your entire code.
+              <br />
+              <br />
+              2.let: The let keyword declares a block-scoped local
+              variable.Block-scoped means that the variable is only available
+              within the block it was declared in
+              <br />
+              <br />
+              3.The const keyword declares a block-scoped.a variable that can't
+              be reassigned Constants are also called “immutable variables”, but
+              that's a bit of a misnomer since they are actually variables -
+              just ones that can't be reassigned.
+            </p>
+          </div>
+        </div>
+        <div class="collapse w-3/4 mx-auto mb-10">
+          <input type="checkbox" class="peer" />
+          <div
+            class="collapse-title bg-neutral-50 text-blue-900 font-semibold text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content rounded-t-2xl"
+          >
+            2. What is Difference between arrow function and normal function ?
+          </div>
+          <div
+            class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            <p class="py-5">
+              1.Unlike regular functions, arrow functions do not have their own
+              this. The value of this inside an arrow function remains the same
+              throughout the lifecycle of the function and is always bound to
+              the value of this in the closest non-arrow parent function.
+              <br />
+              <br />
+              2.Regular functions created using function declarations or
+              expressions are constructible and callable. Since regular
+              functions are constructible, they can be called using the new
+              keyword. However, the arrow functions are only callable and not
+              constructible, i.e arrow functions can never be used as
+              constructor functions. Hence, they can never be invoked with the
+              new keyword.
+            </p>
+          </div>
+        </div>
+        <div class="collapse w-3/4 mx-auto mb-10">
+          <input type="checkbox" class="peer" />
+          <div
+            class="collapse-title bg-neutral-50 text-blue-900 font-semibold text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content rounded-t-2xl"
+          >
+            3. What is Difference between map, foreach, find, filter ?
+          </div>
+          <div
+            class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            <p class="py-5">
+              1. Map executes the same code on every element in an array and
+              returns a new array with the updated elements.
+              <br />
+              <br />
+              2. ForEach is used to execute the same code on every element in an
+              array but does not change the array and it returns undefined
+              <br />
+              <br />
+              3.Filter checks every element in an array to see if it meets a
+              certain criteria and returns a new array with the elements that
+              return truthy for the criteria.
+              <br />
+              <br />
+              3.find When you want to select a single element from an array.
+              <br />
+              <br />
+            </p>
+          </div>
+        </div>
+        <div class="collapse w-3/4 mx-auto mb-10">
+          <input type="checkbox" class="peer" />
+          <div
+            class="collapse-title bg-neutral-50 text-blue-900 font-semibold text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content rounded-t-2xl"
+          >
+            4. why we use template string in javascript?
+          </div>
+          <div
+            class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            <p class="py-5">
+              1. Template literals provide an easy way to interpolate variables
+              and expressions into strings. The method is called string
+              interpolation.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

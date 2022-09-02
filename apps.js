@@ -8,7 +8,6 @@ const newsPortalData = async()=>{
 
 const displayNewsWebsite = async()=>{
     const items = await newsPortalData()
-    console.log(items)
     
     const AllMenu = document.getElementById("All-Menu");
 
@@ -50,23 +49,21 @@ const dynamicCart = (id)=>{
 
 
 const displyAllData=(cards)=>{
-    console.log(cards)
 
-    const box = item = async()=>{
-        const xi = await newsPortalData()
-        console.log(xi)
-        const jily =  document.getElementById("find-cetegory").innerText=xi[0].category_name;
+    // const box = item = async()=>{
+    //     const xi = await newsPortalData()
+    //     const jily =  document.getElementById("find-cetegory").innerText=xi[0].category_name;
         
         
-    }
+    // }
    
-    box()
+    // box()
 
    
     const lengthCount = document.getElementById("length-count").innerText=cards.length;
     
 
-} 
+    
    
 
     
@@ -75,7 +72,7 @@ const displyAllData=(cards)=>{
 
     cards.forEach(card =>{
         
-        const {image_url,details,title,author,total_view,rating}=card;
+        const {image_url,details,title,author,total_view,rating,_id}=card;
         const {img,name,published_date}=author;
         const {number,badge}=rating;
         const div = document.createElement("div");
@@ -114,7 +111,10 @@ const displyAllData=(cards)=>{
                 
                     </div>
                     <div class="pt-3">
-                    <a href=""><i class="fa-solid fa-arrow-right"></i></a>
+
+
+                    <label onclick="modalDynamicDataLoad('${_id}')" for="my-modal-3" class="cursor-pointer bg-neutral-100 py-2 px-4"><i class="fa-solid fa-arrow-right"></i></label>
+
                     </div>
                     </div>
              
@@ -130,7 +130,38 @@ const displyAllData=(cards)=>{
     });
     
 
-
+}
 
 
 displayNewsWebsite()
+
+
+
+const modalDynamicDataLoad=(modalid)=>{
+
+    fetch(`https://openapi.programming-hero.com/api/news/${modalid}`)
+    .then (res => res.json())
+    .then (data => displayModalData(data.data[0])) 
+   
+
+}
+
+const displayModalData=(modelData)=>{
+
+    const{image_url,details,title}=modelData;
+    console.log(modelData)
+    
+    const modalBody =document.getElementById("modalBody");
+    modalBody.innerHTML=`
+    <img src="${image_url}" alt="">
+    
+    <h3 class="text-lg font-bold">${title}</h3>
+    <p class="py-4">${details}</p>
+    
+    `
+
+    
+
+
+
+}
