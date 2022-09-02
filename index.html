@@ -5,8 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- daisy ui cdn  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind css cdn  -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="bg-slate-100">
+    <!-- start  -->
+    <!-- navbar start -->
+    <div class="navbar md:w-9/12 md:mx-auto py-10">
+      <div class="flex-1 font-bold">
+        <a
+          class="btn btn-ghost bg-blue-800 normal-case text-slate-100 text-xl mx-5"
+          >Bangladesh</a
+        >News
+      </div>
+      <div class="flex-none gap-2">
+        <div class="flex-none">
+          <ul class="menu menu-horizontal p-0">
+            <li class="underline">
+              <a class="text-blue-800 font-bold">News</a>
+            </li>
+
+            <li><a class="text-blue-300">Blog</a></li>
+          </ul>
+        </div>
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img src="https://placeimg.com/80/80/people" />
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <hr class="w-10/12 mx-auto py-5" / >
+    <!-- navbar end  -->
+
     <script src="apps.js
     "></script>
   </body>
