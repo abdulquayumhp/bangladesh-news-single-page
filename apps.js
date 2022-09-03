@@ -1,6 +1,11 @@
 
 
+   const sniper = document.getElementById("sniper").style.display="none"
+
+
+
 const newsPortalData = async()=>{
+   
     const res = await fetch("https://openapi.programming-hero.com/api/news/categories")
     const data = await res.json()
     return data.data.news_category;
@@ -10,20 +15,15 @@ const displayNewsWebsite = async()=>{
     const items = await newsPortalData()
     
     const AllMenu = document.getElementById("All-Menu");
-
     
-        
-        
+    
 
     items.forEach(item => {
         
+    
         // console.log(item)
         const {category_name,category_id}=item; 
 
-        
-        
-
-        
         const li = document.createElement("li")
         li.innerHTML=`
         <button onclick="dynamicCart(${category_id})">${category_name}</button>
@@ -40,6 +40,7 @@ const displayNewsWebsite = async()=>{
 
 
 const dynamicCart = (id)=>{
+    const sniper = document.getElementById("sniper").style.display="block"
     fetch(`https://openapi.programming-hero.com/api/news/category/0${id}`)
     .then (res => res.json())
     .then (data => displyAllData(data.data)) 
@@ -50,27 +51,20 @@ const dynamicCart = (id)=>{
 
 const displyAllData=(cards)=>{
 
-    // const box = item = async()=>{
-    //     const xi = await newsPortalData()
-    //     const jily =  document.getElementById("find-cetegory").innerText=xi[0].category_name;
-        
-        
-    // }
    
-    // box()
+    const sniper = document.getElementById("sniper").style.display="none"
+   
 
    
     const lengthCount = document.getElementById("length-count").innerText=cards.length;
     
 
-    
-   
-
-    
     const displayCard = document.getElementById("display-Card");
     displayCard.textContent=""
 
     cards.forEach(card =>{
+        
+        
         
         const {image_url,details,title,author,total_view,rating,_id}=card;
         const {img,name,published_date}=author;
@@ -132,7 +126,7 @@ const displyAllData=(cards)=>{
 
 }
 
-
+dynamicCart(1)
 displayNewsWebsite()
 
 
@@ -165,3 +159,4 @@ const displayModalData=(modelData)=>{
 
 
 }
+
