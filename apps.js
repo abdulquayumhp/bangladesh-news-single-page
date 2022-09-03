@@ -1,6 +1,6 @@
 
 
-   const sniper = document.getElementById("sniper").style.display="none"
+const sniper = document.getElementById("sniper").style.display="none"
 
 
 
@@ -40,7 +40,9 @@ const displayNewsWebsite = async()=>{
 
 
 const dynamicCart = (id)=>{
+
     const sniper = document.getElementById("sniper").style.display="block"
+
     fetch(`https://openapi.programming-hero.com/api/news/category/0${id}`)
     .then (res => res.json())
     .then (data => displyAllData(data.data)) 
@@ -50,6 +52,10 @@ const dynamicCart = (id)=>{
 
 
 const displyAllData=(cards)=>{
+    // console.log(cards)
+
+
+    cards.sort((a, b) => b.total_view - a.total_view);
 
    
     const sniper = document.getElementById("sniper").style.display="none"
