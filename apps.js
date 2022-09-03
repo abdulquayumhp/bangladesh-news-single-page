@@ -1,9 +1,9 @@
 
+    // globali sniper addd 
+    const sniper = document.getElementById("sniper").style.display="none"
 
-const sniper = document.getElementById("sniper").style.display="none"
 
-
-
+    // menu category data api 
 const newsPortalData = async()=>{
    
     const res = await fetch("https://openapi.programming-hero.com/api/news/categories")
@@ -11,36 +11,37 @@ const newsPortalData = async()=>{
     return data.data.news_category;
 }
 
+    // dynamic menu cetegory fuction 
 const displayNewsWebsite = async()=>{
+    // category funtion all 
     const items = await newsPortalData()
     
+    // all menu html id 
     const AllMenu = document.getElementById("All-Menu");
     
     
 
     items.forEach(item => {
         
-    
-        // console.log(item)
         const {category_name,category_id}=item; 
+
 
         const li = document.createElement("li")
         li.innerHTML=`
         <button onclick="dynamicCart(${category_id})">${category_name}</button>
-        
 
-        
         `;
         AllMenu.appendChild(li);
         
     });
-
-
 }
+    // dynamic menu cetegory fuction end
 
 
+    //dynamic fuction add
 const dynamicCart = (id)=>{
 
+    // fuction sniper id 
     const sniper = document.getElementById("sniper").style.display="block"
 
     fetch(`https://openapi.programming-hero.com/api/news/category/0${id}`)
@@ -50,35 +51,41 @@ const dynamicCart = (id)=>{
 
 
 
-
+    //dynamic car fuciton
 const displyAllData=(cards)=>{
-    // console.log(cards)
 
-
+    // for sorting arry to  heigest view persion 
     cards.sort((a, b) => b.total_view - a.total_view);
 
    
+    //for card section none sniper add
     const sniper = document.getElementById("sniper").style.display="none"
    
 
    
+    // total how much category have id 
     const lengthCount = document.getElementById("length-count").innerText=cards.length;
     
-
+    // card body seciton id 
     const displayCard = document.getElementById("display-Card");
     displayCard.textContent=""
 
+
+
+
+    //forEach For inviditual
     cards.forEach(card =>{
-        
-        
-        
+
+
+        // object distructuring 
         const {image_url,details,title,author,total_view,rating,_id}=card;
         const {img,name,published_date}=author;
         const {number,badge}=rating;
         const div = document.createElement("div");
 
+
+        // card 
         div.innerHTML=`
-        
         <div
           
             class="card card-side bg-base-100 shadow-xl w-9/12 mx-auto mb-20 md:flex-nowrap flex-wrap"
@@ -137,6 +144,9 @@ displayNewsWebsite()
 
 
 
+
+    // details section 
+    // details section 
 const modalDynamicDataLoad=(modalid)=>{
 
     fetch(`https://openapi.programming-hero.com/api/news/${modalid}`)
@@ -146,6 +156,8 @@ const modalDynamicDataLoad=(modalid)=>{
 
 }
 
+
+    // modal
 const displayModalData=(modelData)=>{
 
     const{image_url,details,title}=modelData;
@@ -159,10 +171,6 @@ const displayModalData=(modelData)=>{
     <p class="py-4">${details}</p>
     
     `
-
-    
-
-
 
 }
 
